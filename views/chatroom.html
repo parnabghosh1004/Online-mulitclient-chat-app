@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parnab's Realtime ChatterBox</title>
+    <link rel="stylesheet" href="../static/css/chatroom.css">
+    <script src="https://kit.fontawesome.com/1bd8840b7b.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <button id="samplebtn" style="display: none;">button-1</button>
+    <nav>
+        <img src="../static/media/logo.png" alt="My App" id="logo">
+        <h1>Parnab's Realtime ChatterBox</h1>
+        <form action="/">
+            <button type="submit" class="btn" id="leave">Leave chatroom</button>
+        </form>
+    </nav>
+    <div id="app">
+        <div id="information">
+            <br>
+            <h2><u>My Profile :</u></h2><br>
+            <p id="ClientName"></p>
+            <br><br><br>
+            <h2><u>Online Now :</u></h2>
+            <br><br>
+        </div>
+        <div id="chatdesk">
+            <div class="container"></div>    
+            <div class="send">
+                <form action="/" id="send-container">
+                    <input type="text" name="messageInp" id="messageInp">
+                    <button type="submit" class="btn"><i class="fa fa-share-square-o"></i>  Send</button>
+                </form>
+                <button class="btn" id="cc"><i class="fa fa-trash"></i>  Clear Chat</button>
+            </div>
+        </div>    
+    </div>    
+    <script src="http://localhost:8000/socket.io/socket.io.js"></script>
+    <script src="/static/js/client.js"></script>
+</body>
+
+</html>
