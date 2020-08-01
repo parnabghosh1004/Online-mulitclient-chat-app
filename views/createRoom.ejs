@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parnab's Realtime ChatBox</title>
+    <link rel="stylesheet" href="../static/css/index.css" type="text/css">
+</head>
+
+<body>
+    <nav>
+        <img src="../static/media/logo.png" alt="My App" id="logo">
+        <h1>Parnab's Realtime ChatBox</h1>
+    </nav>
+    <div id="box">
+        <h1>Welcome to the my ChatBox</h1>
+        <form action="/createRoom" method="POST">
+            <input type="text" placeholder="Enter your name" name="cname" required>
+            <input type="text" placeholder="Enter a room ID" name="roomID" required style="margin-top: 5px;"><br>
+            <button type="submit">Create Chatroom</button>
+        </form>
+        <a href="/">Go back</a><br>
+        <p style="margin-left: -24rem;margin-top: 43px;font-size: 16px;font-weight: bold;">* Make sure that your room ID is a strong password.</p>
+    </div>
+</body>
+
+</html>

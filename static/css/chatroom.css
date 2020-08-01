@@ -6,10 +6,6 @@
     margin: 0;
     padding: 0;
 }
-#logo{
-    width: 50px;
-    height: 50px;
-}
 nav{
     display: flex;
     flex-direction: row;
@@ -18,8 +14,26 @@ nav{
     margin: 16px 0px;
     height: 3.7rem;
 }
+#logo{
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    left: 40px;
+}
 nav h1{
     margin-left: 20px;
+    position: absolute;
+    left: 90px;
+}
+nav p{
+    position: absolute;
+    left: 50rem;
+    font-size: 20px;
+    font-weight: bold;
+}
+#leave{
+    position: relative;
+    left: 41.5rem;
 }
 body{
     background-image: linear-gradient(rgb(255,255,255),red);
@@ -101,11 +115,6 @@ body{
     border: 2px solid black;
     border-radius: 6px;
     outline: none;
-}
-#leave{
-    position: relative;
-    left: 29rem;
-    /* top: 4px; */
 }
 
 #send-container{

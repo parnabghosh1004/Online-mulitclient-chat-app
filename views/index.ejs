@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parnab's Realtime ChatBox</title>
+    <link rel="stylesheet" href="../static/css/index.css" type="text/css">
+</head>
+
+<body>
+    <nav>
+        <img src="../static/media/logo.png" alt="My App" id="logo">
+        <h1>Parnab's Realtime ChatBox</h1>
+    </nav>
+    <div id="box">
+        <h1>Welcome to the my ChatBox</h1>
+        <form action="/" method="POST">
+            <input type="text" placeholder="Enter your name" name="cname" required>
+            <input type="text" placeholder="Enter Room ID" name="roomID" required style="margin-top: 5px;"><br>
+            <button type="submit">Go to the Chatroom</button>
+            <p style="font-size: 22px;margin-top: 12px;margin-bottom: 40px;display: none;" id="msg">This room does not exists! Please enter an existing room ID.</p>
+        </form>
+        <a href="/createRoom">Create a new Room!</a>
+    </div>
+    <script>
+        if ( "<%= roomExists %>" === "false" )
+        {
+            document.getElementById( 'msg' ).style.display = "block";
+            setTimeout( () => {
+                document.getElementById( 'msg' ).style.display = "none";
+            }, 5000 );
+        }
+    </script>
+</body>
+
+</html>

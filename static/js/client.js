@@ -3,6 +3,7 @@ const form = document.getElementById('send-container');
 const messageInp = document.getElementById('messageInp');
 const messageContainer = document.querySelector('.container');
 const ClientName = document.getElementById('ClientName');
+const roomID = document.getElementById('roomID');
 const cc = document.getElementById('cc')
 const audio1 = new Audio('..\\static\\media\\message.mp3');
 const audio2 = new Audio('..\\static\\media\\joinleft.mp3');
@@ -27,18 +28,20 @@ const append = (message,position)=>{
 }
 
 
-let cname = 'undefined'
-socket.on('i-have-joined',c=>{
-    cname = c["name"]
+let cname = "user",roomid = "admin";
+socket.on('i-have-joined',details=>{
+    cname = details["cname"];
+    roomid = details["roomID"];
     ClientName.innerText = `Name : ${cname}`;
-    socket.emit('new-user-joined',cname);
+    roomID.innerText = `Room ID : ${roomid}`;
+    socket.emit('new-user-joined',cname,roomid);
 })
 
 form.addEventListener('submit',(e)=>{
     e.preventDefault();
     const message = messageInp.value;
     append(`<p style="text-align: right;font-size: 14px;">${curr(d)}</p>You: ${message}`,'right')
-    socket.emit('send',message);
+    socket.emit('send',message,roomid);
     messageInp.value ='';
 })
 
@@ -49,7 +52,7 @@ cc.addEventListener('click',(e)=>{
 socket.on('user-joined',(name,user)=>{
     let index = 1;
     if(name!==cname){
-        append(`<p style="text-align: right;font-size: 14px;">${curr(d)}</p>${name} joined the chat`,'center');
+        append(`<p style="text-align: right;font-size: 14px;">${curr(d)}</p>${name} joined`,'center');
     }
     document.querySelectorAll('.ClientName').forEach(e=>e.remove())
     for(let i in user)
@@ -69,7 +72,7 @@ socket.on('receive',data=>{
 })
 
 socket.on('left',(name,user)=>{
-    append(`<p style="text-align: right;font-size: 14px;">${curr(d)}</p>${name} left the chat`,'center');
+    append(`<p style="text-align: right;font-size: 14px;">${curr(d)}</p>${name} left`,'center');
     let index = 1;
     document.querySelectorAll('.ClientName').forEach(e=>e.remove())
     for(let i in user)

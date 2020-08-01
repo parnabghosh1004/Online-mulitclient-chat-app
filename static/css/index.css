@@ -50,13 +50,25 @@ body{
 #box button{
     width: 30.3rem;
     height: 3rem;
-    margin: 13px;
+    margin: 5px;
     font-size: 19px;
     outline: none;
     cursor: pointer;
+    margin-bottom: 40px;
 }
 
 #box button:hover{
     color: white;
     background-color: rgb(168, 12, 12);
+}
+
+#box a{
+    text-decoration: underline;
+    font-size: 30px;
+    font-weight: bold;
+    color:black;
+}
+
+#box a:hover{
+    color:rgb(4, 4, 71);
 }

@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Parnab's Realtime ChatterBox</title>
+    <title>Parnab's Realtime ChatBox</title>
     <link rel="stylesheet" href="../static/css/chatroom.css">
     <script src="https://kit.fontawesome.com/1bd8840b7b.js" crossorigin="anonymous"></script>
 </head>
@@ -13,7 +13,8 @@
     <button id="samplebtn" style="display: none;">button-1</button>
     <nav>
         <img src="../static/media/logo.png" alt="My App" id="logo">
-        <h1>Parnab's Realtime ChatterBox</h1>
+        <h1>Parnab's Realtime ChatBox</h1>
+        <p id="roomID">Room ID: 3j3ndi33</p>
         <form action="/">
             <button type="submit" class="btn" id="leave">Leave chatroom</button>
         </form>
@@ -38,7 +39,7 @@
             </div>
         </div>    
     </div>    
-    <script src="http://localhost:8000/socket.io/socket.io.js"></script>
+    <script src="socket.io/socket.io.js"></script>
     <script src="/static/js/client.js"></script>
 </body>
 
