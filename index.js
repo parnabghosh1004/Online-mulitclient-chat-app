@@ -76,7 +76,7 @@ io.on( 'connection', socket =>
         delete rooms[room_id][ socket.id ];
         socket.to( room_id ).broadcast.emit( 'left', a, rooms[room_id] );
         socket.leave( room_id );
-        if ( rooms[room_id].length == 0 ) {
+        if ( Object.keys(rooms[room_id]).length == 0 ) {
             delete rooms[room_id];
         }
     } )
