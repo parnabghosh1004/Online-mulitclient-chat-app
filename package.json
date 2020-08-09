@@ -4,7 +4,7 @@
   "description": "This is a node server for chat app",
   "main": "index.js",
   "scripts": {
-    "server": "node index.js"
+    "start": "node index.js"
   },
   "author": "Parnab Ghosh",
   "license": "ISC",
