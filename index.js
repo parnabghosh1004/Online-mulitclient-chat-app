@@ -45,7 +45,8 @@ app.post( '/createRoom', ( req, res ) =>
 
 app.get( '/chatroom', ( req, res ) =>
 {
-    res.render( 'chatroom' );
+    if (details["cname"] === "user") res.redirect('/');
+    else res.render( 'chatroom' );
 } )
 
 // on hitting /chatroom
@@ -53,6 +54,7 @@ io.on( 'connection', socket =>
 {
     socket.join( details["roomID"] );
     socket.emit( 'i-have-joined', details );
+    details = { cname: "user", roomID: "admin" };
     socket.on( 'new-user-joined', ( name, roomid ) =>
     {
         rooms[roomid][socket.id] = name;
