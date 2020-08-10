@@ -8,7 +8,7 @@ const path = require( 'path' )
 const app = express()
 const server = http.createServer( app )
 const io = socketio( server )
-const PORT = 8000
+const PORT = process.env.PORT || 8000
 const rooms = {}
 
 app.set( 'view engine', 'ejs' )
